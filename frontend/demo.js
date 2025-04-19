@@ -140,11 +140,11 @@ let form_select = document.querySelector('#form_select'),
 
 submit.addEventListener('click', (event) => {
     event.preventDefault();
-    if (!getName.value.trim()) magError('Please Enter a Name', 0)
-    else if (!getQuantity.value.trim()) magError('Please Enter a Quantity', 1)
-    else if (!getPrice.value.trim()) magError('Please Enter a Price', 2)
-    else if (!getImage.value.trim()) magError('Please Enter a Url', 3)
-    else if (form_select.value == 'Select') magError('Please Select Category', 4)
+    if (!getName.value.trim())return magError('Please Enter a Name', 0)
+    else if (!getQuantity.value.trim())return magError('Please Enter a Quantity', 1)
+    else if (!getPrice.value.trim())return magError('Please Enter a Price', 2)
+    else if (!getImage.value.trim())return magError('Please Enter a Url', 3)
+    else if (form_select.value == 'Select')return magError('Please Select Category', 4)
     myPost();
     if(submit.textContent=='Edit Product')submit.textContent="Add product";
     flag=true;
